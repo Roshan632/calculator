@@ -31,9 +31,9 @@
         <td colspan="4"><input type="text" id="result" disabled></td>
     </tr>
     <tr>
-    <td colspan="1"2onclick="clearDisplay()">C</td>
-    <td colspan="1" onclick="deleteChar()">Del</td>
-    <td  colspan="2" onclick="calculate('=')">=</td>
+    <td colspan="1"onclick="clearDisplay()">C</td>
+    <td colspan="1"onclick="deleteChar()">Del</td>
+    <td  colspan="2"onclick="calculate('=')">=</td>
     
     
     </tr>
@@ -68,7 +68,7 @@
         function appendChar(char){
             document.getElementById('result').value+=char;
         }
-        function clearDisplay (){
+        function clearDisplay(){
             document.getElementById('result').value='';
         }
         function deleteChar(){
