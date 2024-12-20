@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        table{
+            margin: 20px auto;
+            background-color: rgb(205, 228, 255);
+        }
+        td{
+            cursor: pointer;
+            margin: 20px;
+            padding: 34px;
+            font-size: 42px;
+            color: rgb(41, 138, 223);
+        }
+        input{
+            margin: 20px;
+            padding: 23px;
+            font-size: 45px;
+            color: rebeccapurple;
+        }
+        
+    </style>
+</head>
+<body>
+    <table border="1">
+    <tr>
+        <td colspan="4"><input type="text" id="result" disabled></td>
+    </tr>
+    <tr>
+    <td colspan="1"2onclick="clearDisplay()">C</td>
+    <td colspan="1" onclick="deleteChar()">Del</td>
+    <td  colspan="2" onclick="calculate('=')">=</td>
+    
+    
+    </tr>
+    <tr>
+        <td span="2" onclick="appendChar('+')">+</td>
+        <td onclick="appendChar('1')">1</td>
+        <td onclick="appendChar('2')">2</td>
+        <td onclick="appendChar('3')">3</td>
+    </tr>
+    <tr>
+        <td onclick="appendChar('-')">-</td>
+        <td onclick="appendChar('4')">4</td>
+        <td onclick="appendChar('5')">5</td>
+        <td onclick="appendChar('6')">6</td>
+    </tr>
+    <tr>
+        <td onclick="appendChar('*')">*</td>
+        <td onclick="appendChar('7')">7</td>
+        <td onclick="appendChar('8')">8</td>
+        <td onclick="appendChar('9')">9</td>
+    </tr>
+    <tr>
+        <td onclick="appendChar('.')">.</td>
+        <td onclick="appendChar('0')">0</td>
+       
+        
+        
+    </tr>
+    
+    </table>
+    <script>
+        function appendChar(char){
+            document.getElementById('result').value+=char;
+        }
+        function clearDisplay (){
+            document.getElementById('result').value='';
+        }
+        function deleteChar(){
+            let currentValue=document.getElementById('result').value;
+            document.getElementById('result').value=currentValue.slice(0,-1);
+        }
+        function calculate(){
+            let expression=document.getElementById('result').value;
+            if(expression){
+                document.getElementById('result').value=eval(expression);
+            }
+        }
+    </script>
+    
+    
+    
+</body>
+</html>
